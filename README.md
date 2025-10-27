@@ -17,7 +17,8 @@ Features:
 Screenshots:
 1. Welcome Page (Create Course) - <img width="628" height="803" alt="Screenshot 2025-10-27 095426" src="https://github.com/user-attachments/assets/2c262be0-0582-4caf-86b9-1af044fde6d3" />
 
-2. Show Courses Page - save screenshot as 'screenshots/show_courses.png'
+2. Show Courses Page <img width="1167" height="863" alt="Screenshot 2025-10-27 100858" src="https://github.com/user-attachments/assets/bece1b96-25ef-465e-b5a6-859f0f4d1aaa" />
+
 
 Installation Steps:
 1. Clone the repository:
