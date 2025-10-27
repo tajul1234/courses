@@ -85,5 +85,4 @@ Notes for Beginners:
 - Add modules and contents dynamically on the Welcome page
 - Place screenshots in the 'screenshots/' folder
 
-License:
-This project is open-source under MIT License.
+
