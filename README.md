@@ -1,65 +1,88 @@
-<<<<<<< HEAD
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Courses Project - Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Description:
+This is a Laravel-based course management system where users can create courses, add modules, and add video contents for each module. Feature videos are uploaded in the background using Laravel queues.
 
-## About Laravel
+Features:
+- Create courses with title and feature video
+- Add multiple modules under each course
+- Add multiple contents under each module
+  - Content title
+  - Video source type (YouTube, Vimeo, HTML5)
+  - Video URL
+  - Video length in HH:MM:SS
+- Background video upload using Laravel queue
+- Responsive and beginner-friendly interface with Tailwind CSS
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Screenshots:
+1. Welcome Page (Create Course) - <img width="628" height="803" alt="Screenshot 2025-10-27 095426" src="https://github.com/user-attachments/assets/2c262be0-0582-4caf-86b9-1af044fde6d3" />
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+2. Show Courses Page - save screenshot as 'screenshots/show_courses.png'
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Installation Steps:
+1. Clone the repository:
+   git clone https://github.com/tajul1234/courses.git
+   cd courses
 
-## Learning Laravel
+2. Install PHP dependencies:
+   composer install
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+3. Install Node dependencies and build assets:
+   npm install
+   npm run dev
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+4. Copy .env.example to .env and configure database:
+   cp .env.example .env
+   php artisan key:generate
+   - Update database credentials in .env
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+5. Run migrations:
+   php artisan migrate
 
-## Laravel Sponsors
+6. Start queue worker for background video upload:
+   php artisan queue:work
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+7. Serve the application:
+   php artisan serve
 
-### Premium Partners
+Usage:
+- Open in browser: http://127.0.0.1:8000
+- Go to Welcome Page to create courses, modules, and contents
+- Feature videos upload in the background
+- Go to Show Courses page to view all courses with their modules and contents
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Technologies Used:
+- Laravel 10
+- PHP 8.2
+- Tailwind CSS
+- Blade Templates
+- jQuery for dynamic forms
+- MySQL or SQLite
+- Laravel Queue for background tasks
 
-## Contributing
+Folder Structure:
+app/
+  Http/
+    Controllers/
+      CourseController.php
+  Jobs/
+    UploadCourseVideo.php
+resources/
+  views/
+    welcome.blade.php
+    courses/
+      show.blade.php
+storage/
+  app/public/
+    temp_videos/
+    videos/
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Notes for Beginners:
+- Run 'php artisan queue:work --queue=videos' to process video uploads
+- Upload videos in mp4, avi, or mov format
+- Ensure storage/ folder is writable
+- Add modules and contents dynamically on the Welcome page
+- Place screenshots in the 'screenshots/' folder
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# courses
->>>>>>> d59f0a5c78e733fc122ca9bb4e6e2803f8280daf
+License:
+This project is open-source under MIT License.
